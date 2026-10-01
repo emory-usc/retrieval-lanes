@@ -1,0 +1,27 @@
+[
+  {
+    "query": "which missions visited the Moon",
+    "category": "mission",
+    "expected_docs": ["doc-002", "doc-003"],
+    "expected_winner": "direct",
+    "note": "browse/enumerate within a category -> raw ranked hits, no synthesis"
+  },
+  {
+    "query": "summarize the Moon landing and the samples returned",
+    "expected_docs": ["doc-003", "doc-004"],
+    "expected_winner": "rag",
+    "note": "scoped narrative with citations -> single-pass top-k + synthesis"
+  },
+  {
+    "query": "reusable rockets versus the space shuttle and crewed Mars",
+    "expected_docs": ["doc-001", "doc-006", "doc-009"],
+    "expected_winner": "agentic",
+    "note": "multi-hop across technology / mission / planning -> iterative retrieval"
+  },
+  {
+    "query": "orbits gravity assists and the deep space network",
+    "expected_docs": ["doc-005", "doc-011", "doc-010"],
+    "expected_winner": "agentic",
+    "note": "multi-hop across physics / technology -> iterative retrieval"
+  }
+]
